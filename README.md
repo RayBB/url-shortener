@@ -1,5 +1,4 @@
-I started trying https://github.com/swagger-api/swagger-node but got errors following the setup guide.
-That paired with the fact that it has not been updated in a while made me decide to abandon it.
+A url shortener
 
 # Getting started
 
@@ -7,7 +6,7 @@ That paired with the fact that it has not been updated in a while made me decide
 
 `node index.js` - start the server
 
-In a new terminal run: `curl -d '{"url":"https://yahoo.com"}' -H 'Content-Type: application/json' http://localhost:3000`
+In a new terminal run: `curl -d '{"url":"https://example.com"}' -H 'Content-Type: application/json' http://localhost:3000`
 
 Response: 
 ```JSON
@@ -23,7 +22,9 @@ Response:
   }
 }
 ```
-Now you can visit http://localhost:3000/cf0d7b5 and be redirected to yahoo.com
+Now you can visit http://localhost:3000/cf0d7b5 and be redirected to example.com.
+
+You can also visit http://localhost:3000/cf0d7b5/stats to see the stats for that url.
 
 # Development
 
@@ -42,7 +43,12 @@ I recommend using [hey](https://github.com/rakyll/hey) for some basic load testi
 
 On my machine a single instance can handle about 6k requests per second.
 
+On heroku we can handle about 600 requests per second.
+
 # Design
+
+I started trying https://github.com/swagger-api/swagger-node but got errors following the setup guide.
+That paired with the fact that it has not been updated in a while made me decide to abandon it and stick with basics.
 
 We use an in memory DB. This means each time your app closes all your data will be lost.
 This can always be changed to a real document database (or relational if you desire).
