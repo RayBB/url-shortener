@@ -63,3 +63,5 @@ But if you already have heroku setup on your machine it's as simple as:
 `heroku create` - only the first time
 
 `git push heroku main` - whenever you want to deploy
+
+A demo instance is available at https://aqueous-river-19144.herokuapp.com
